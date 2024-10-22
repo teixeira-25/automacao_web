@@ -1,39 +1,26 @@
 package scenarios;
 
-import config.Navegador;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
+import pages.SrBarrigaHomePage;
+import pages.SrBarrigaLoginPage;
+import steps.Hooks;
 
-public class TestSrBarriga
+public class TestSrBarriga extends Hooks
 {
-    static WebDriver driver;
-
-    @BeforeAll
-    public static void antes()
-    {
-        driver = Navegador.getNavegador();
-    }
-
-    @AfterAll
-    public static void depois()
-    {
-        driver.quit();
-        driver = null;
-    }
+    SrBarrigaLoginPage login = new SrBarrigaLoginPage(driver);
+    SrBarrigaHomePage home = new SrBarrigaHomePage(driver);
 
     @Test
-    public void teste() throws InterruptedException
+    public void teste01() throws InterruptedException
     {
-        driver.get("https://seubarriga.wcaquino.me");
+        login.abrir();
+        login.preencherEmail("ytalo@teste.local");
+        login.preencherSenha("1234");
+        login.clickEntrar();
         Thread.sleep(2000);
-    }
-
-    @Test
-    public void teste02() throws InterruptedException
-    {
-        driver.get("https://seubarriga.wcaquino.me");
+        String mensagemTela = home.pegarMsg();
+        Assertions.assertEquals("Bem vindo, Ytalo Pegador!", mensagemTela);
         Thread.sleep(2000);
     }
 }
