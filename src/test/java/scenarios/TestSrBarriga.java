@@ -1,16 +1,14 @@
 package scenarios;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import config.baseclass.BaseSteps;
+import org.junit.jupiter.api.*;
 import pages.SrBarrigaHomePage;
 import pages.SrBarrigaLoginPage;
-import steps.Hooks;
 
-public class TestSrBarriga extends Hooks
+public class TestSrBarriga extends BaseSteps
 {
-    SrBarrigaLoginPage login = new SrBarrigaLoginPage(driver);
-    SrBarrigaHomePage home = new SrBarrigaHomePage(driver);
+    SrBarrigaLoginPage login = new SrBarrigaLoginPage();
+    SrBarrigaHomePage home = new SrBarrigaHomePage();
 
     @Test
     @DisplayName("Cenario: Login com sucesso")
@@ -36,4 +34,17 @@ public class TestSrBarriga extends Hooks
      * Cenario: Email invalido
      *
      * */
+
+
+    @BeforeAll
+    public static void antes()
+    {
+        abrirBrowser();
+    }
+
+    @AfterAll
+    public static void depois()
+    {
+        fecharBrowser();
+    }
 }

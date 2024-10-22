@@ -1,21 +1,14 @@
 package pages;
 
+import config.baseclass.BasePages;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class SrBarrigaLoginPage
+public class SrBarrigaLoginPage extends BasePages
 {
     private String url = "https://seubarriga.wcaquino.me";
     private By campoEmail = By.id("email");
     private By campoSenha = By.id("senha");
     private By btnEntrar = By.cssSelector("form > button.btn.btn-primary");
-
-    private WebDriver driver;
-
-    public SrBarrigaLoginPage(WebDriver navegador)
-    {
-        this.driver = navegador;
-    }
 
     public void abrir()
     {
