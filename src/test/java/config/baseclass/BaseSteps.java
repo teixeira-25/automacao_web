@@ -1,6 +1,6 @@
 package config.baseclass;
 
-import config.Navegador;
+import config.support.Navegador;
 import org.openqa.selenium.WebDriver;
 
 public class BaseSteps
