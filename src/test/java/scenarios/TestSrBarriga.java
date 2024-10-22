@@ -1,6 +1,7 @@
 package scenarios;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.SrBarrigaHomePage;
 import pages.SrBarrigaLoginPage;
@@ -12,6 +13,7 @@ public class TestSrBarriga extends Hooks
     SrBarrigaHomePage home = new SrBarrigaHomePage(driver);
 
     @Test
+    @DisplayName("Cenario: Login com sucesso")
     public void teste01() throws InterruptedException
     {
         login.abrir();
@@ -23,4 +25,15 @@ public class TestSrBarriga extends Hooks
         Assertions.assertEquals("Bem vindo, Ytalo Pegador!", mensagemTela);
         Thread.sleep(2000);
     }
+
+    /**
+     *
+     * Cenario: Email valido de usuario nao cadastrado
+     * Cenario: Email em branco e Senha preenchida
+     * Cenario: Email correto e Senha errada
+     * Cenario: Email correto e Senha e branco
+     * Cenario: Email e senha em branco
+     * Cenario: Email invalido
+     *
+     * */
 }
