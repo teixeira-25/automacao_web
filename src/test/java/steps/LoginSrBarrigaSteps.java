@@ -17,6 +17,7 @@ public class LoginSrBarrigaSteps extends BaseSteps
     public void que_eu_estou_na_pagina_de_login_do_sr_barriga()
     {
         pageLogin.abrir();
+        screenshot();
     }
 
     @Quando("eu preencher o email {string}")
@@ -34,6 +35,7 @@ public class LoginSrBarrigaSteps extends BaseSteps
     @Quando("eu clico em Entrar")
     public void eu_clico_em_entrar()
     {
+        screenshot();
         pageLogin.clickEntrar();
     }
 
@@ -42,5 +44,6 @@ public class LoginSrBarrigaSteps extends BaseSteps
     {
         String msgTela = pageHome.pegarMsg();
         Assert.assertEquals(msgEsperada, msgTela);
+        screenshot();
     }
 }
