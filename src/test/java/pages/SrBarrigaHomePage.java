@@ -1,18 +1,12 @@
 package pages;
 
+import config.baseclass.BasePages;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
-public class SrBarrigaHomePage
+public class SrBarrigaHomePage extends BasePages
 {
-    private By msgAlert = By.cssSelector("body > div.alert.alert-success");
+    private By msgAlert = By.cssSelector("body > div.alert");
 
-    private WebDriver driver;
-
-    public SrBarrigaHomePage(WebDriver navegador)
-    {
-        this.driver = navegador;
-    }
 
     public String pegarMsg()
     {
