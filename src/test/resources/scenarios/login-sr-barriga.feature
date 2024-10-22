@@ -17,9 +17,42 @@ Funcionalidade: Login Sr Barriga
     E eu clico em Entrar
     Entao o sistema exibe a mensagem: "Problemas com o login do usuário"
 
-#  Cenario: Email em branco e Senha preenchida
-#  Cenario: Email correto e Senha errada
-#  Cenario: Email correto e Senha e branco
-#  Cenario: Email e senha em branco
-#  Cenario: Email invalido
+  @reset
+  Cenario: Email em branco e Senha preenchida
+    Dada que eu estou na pagina de Login do Sr Barriga
+    Quando eu preencher o email ""
+    E eu preencher a senha "1234"
+    E eu clico em Entrar
+    Entao o sistema exibe a mensagem: "Email é um campo obrigatório"
 
+  @reset
+  Cenario: Email correto e Senha errada
+    Dada que eu estou na pagina de Login do Sr Barriga
+    Quando eu preencher o email "ytalo@teste.local"
+    E eu preencher a senha "xcxcxcxcxc"
+    E eu clico em Entrar
+    Entao o sistema exibe a mensagem: "Problemas com o login do usuário"
+
+  @reset
+  Cenario: Email correto e Senha e branco
+    Dada que eu estou na pagina de Login do Sr Barriga
+    Quando eu preencher o email "ytalo@teste.local"
+    E eu preencher a senha ""
+    E eu clico em Entrar
+    Entao o sistema exibe a mensagem: "Senha é um campo obrigatório"
+
+#  @reset
+#  Cenario: Email e senha em branco
+#    Dada que eu estou na pagina de Login do Sr Barriga
+#    Quando eu preencher o email "ytalo@teste.local"
+#    E eu preencher a senha ""
+#    E eu clico em Entrar
+#    Entao o sistema exibe a mensagem: "Senha é um campo obrigatório"
+
+#  @reset
+#  Cenario: Email invalido
+#    Dada que eu estou na pagina de Login do Sr Barriga
+#    Quando eu preencher o email "teste.local"
+#    E eu preencher a senha "1234"
+#    E eu clico em Entrar
+#    Entao o sistema exibe a mensagem: "Senha é um campo obrigatório"
