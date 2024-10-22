@@ -1,24 +1,20 @@
 package steps;
 
-import config.Navegador;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.WebDriver;
+import config.baseclass.BaseSteps;
+import io.cucumber.java.AfterAll;
+import io.cucumber.java.BeforeAll;
 
-public class Hooks
+public class Hooks extends BaseSteps
 {
-    public static WebDriver driver;
-
     @BeforeAll
-    public static void antes()
+    public static void antesDeTudo()
     {
-        driver = Navegador.getNavegador();
+        abrirBrowser();
     }
 
     @AfterAll
-    public static void depois()
+    public static void depoisDeTudo()
     {
-        driver.quit();
-        driver = null;
+        fecharBrowser();
     }
 }
