@@ -16,6 +16,7 @@ public class BaseSteps
 
     public static void abrirBrowser()
     {
+        if (browser != null) return;
         browser = Navegador.getNavegador();
     }
 
