@@ -29,4 +29,14 @@ public class SrBarrigaLoginPage extends BasePages
     {
         driver.findElement(btnEntrar).click();
     }
+    public String pegarIdSenha()
+    {
+        return campoSenha.toString();
+    }
+
+    public void estouAqui()
+    {
+        driver.findElement(campoEmail);
+        driver.findElement(campoSenha);
+    }
 }
