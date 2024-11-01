@@ -16,6 +16,4 @@ public class AlertasComponentePage extends BasePages
     {
         return driver.findElement(msgAlert2).getText();
     }
-
-
 }
