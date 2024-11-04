@@ -31,6 +31,7 @@ public class LoginSrBarrigaSteps extends BaseSteps
     public void eu_preencher_a_senha(String senha)
     {
         pageLogin.preencherSenha(senha);
+        screenshot();
     }
 
     @Quando("eu clico em Entrar")
