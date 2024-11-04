@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 
 public class SrBarrigaLoginPage extends BasePages
 {
-    private String url = "https://seubarriga.wcaquino.me";
+    private String url = "http://teacherz.dev.hill/signin";
     private By campoEmail = By.id("email");
-    private By campoSenha = By.id("senha");
-    private By btnEntrar = By.cssSelector("form > button.btn.btn-primary");
+    private By campoSenha = By.id("pass");
+    private By btnEntrar = By.id("login");
 
     public void abrir()
     {

@@ -14,37 +14,42 @@ public class LoginSrBarrigaSteps extends BaseSteps
     SrBarrigaLoginPage pageLogin = new SrBarrigaLoginPage();
     AlertasComponentePage componenteAlert = new AlertasComponentePage();
 
-    @Dada("que eu estou na pagina de Login do Sr Barriga")
-    public void que_eu_estou_na_pagina_de_login_do_sr_barriga()
+    @Dada("que estou na pagina de login")
+    public void que_estou_na_pagina_de_login()
     {
         pageLogin.abrir();
         screenshot();
     }
 
-    @Quando("eu preencher o email {string}")
-    public void eu_preencher_o_email(String email)
+    @Quando("o usuario preenche o campo do email {string}")
+    public void o_usuario_preenche_o_campo_do_email(String email)
     {
         pageLogin.preencherEmail(email);
     }
 
-    @Quando("eu preencher a senha {string}")
-    public void eu_preencher_a_senha(String senha)
+    @Quando("preenche a senha {string}")
+    public void preenche_a_senha(String senha)
     {
         pageLogin.preencherSenha(senha);
         screenshot();
     }
 
-    @Quando("eu clico em Entrar")
-    public void eu_clico_em_entrar()
+    @Quando("clica em entrar")
+    public void clica_em_entrar()
     {
         screenshot();
         pageLogin.clickEntrar();
     }
 
-    @Entao("o sistema exibe a mensagem: {string}")
+    @Entao("o sistema exibe a mensagem {string}")
     public void o_sistema_exibe_a_mensagem(String msgEsperada)
     {
         String msgTela = componenteAlert.pegarMsg1();
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         Assert.assertEquals(msgEsperada, msgTela);
         screenshot();
     }

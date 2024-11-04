@@ -1,59 +1,58 @@
 #language: pt
-Funcionalidade: Login Sr Barriga
+Funcionalidade: Login Fluentz
 
-  @reset
   Cenario: Login com sucesso
-    Dada que eu estou na pagina de Login do Sr Barriga
-    Quando eu preencher o email "ytalo@teste.local"
-    E eu preencher a senha "1234"
-    E eu clico em Entrar
-    Entao o sistema exibe a mensagem: "Bem vindo, Ytalo Pegador!"
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email "teste.gabriel@gmail.com"
+    E preenche a senha "1234"
+    E clica em entrar
+    Entao o sistema exibe a mensagem de sucesso
 
-  @reset
-  Cenario: Email valido de usuario nao cadastrado
-    Dada que eu estou na pagina de Login do Sr Barriga
-    Quando eu preencher o email "xuxinha@teste.local"
-    E eu preencher a senha "1234"
-    E eu clico em Entrar
-    Entao o sistema exibe a mensagem: "Problemas com o login do usuário"
+  Cenario: Email incorreto e senha correta
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email “teixeirinha123@gmail.com”
+    E preenche a senha “1234”
+    E clica em entrar
+    Entao o sistema exibe a mensagem “User not found”
 
-  @reset
-  Cenario: Email em branco e Senha preenchida
-    Dada que eu estou na pagina de Login do Sr Barriga
-    Quando eu preencher o email ""
-    E eu preencher a senha "1234"
-    E eu clico em Entrar
-    Entao o sistema exibe a mensagem: "Email é um campo obrigatório"
+  Cenario: Email invalido
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email “teste.teixeira”
+    E preenche a senha “1234”
+    E clica em entrar
+    Entao o sistema exibe a mensagem “Invalid email”
 
-  @reset
-  Cenario: Email correto e Senha errada
-    Dada que eu estou na pagina de Login do Sr Barriga
-    Quando eu preencher o email "ytalo@teste.local"
-    E eu preencher a senha "xcxcxcxcxc"
-    E eu clico em Entrar
-    Entao o sistema exibe a mensagem: "Problemas com o login do usuário"
+  Cenario: Email invalido e senha incorreta
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email “teixeirinha123”
+    E preenche a senha “qwe123”
+    E clica em entrar
+    Entao o sistema exibe a mensagem “Invalid email”
 
-  @reset
-  Cenario: Email correto e Senha e branco
-    Dada que eu estou na pagina de Login do Sr Barriga
-    Quando eu preencher o email "ytalo@teste.local"
-    E eu preencher a senha ""
-    E eu clico em Entrar
-    Entao o sistema exibe a mensagem: "Senha é um campo obrigatório"
+  Cenario: Email correto e senha incorreta
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email “teste.gabriel@gmail.com”
+    E preenche a senha “qwe123”
+    E clica em entrar
+    Entao o sistema exibe a mensagem “Incorrect password”
 
- @reset
- Cenario: Email e senha em branco
-   Dada que eu estou na pagina de Login do Sr Barriga
-   Quando eu preencher o email ""
-   E eu preencher a senha ""
-   E eu clico em Entrar
-   Entao o sistema exibe a mensagem: "Email é um campo obrigatório"
-   E o sistema exibe a segunda mensagem: "Senha é um campo obrigatório"
+  Cenario: Email e senha incorretos
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email “teixeirinha123@gmail.com”
+    E preenche a senha “qwe123”
+    E clica em entrar
+    Entao o sistema exibe a mensagem “User not found”
 
- @reset
- Cenario: Email invalido
-   Dada que eu estou na pagina de Login do Sr Barriga
-   Quando eu preencher o email "teste.local"
-   E eu preencher a senha "1234"
-   E eu clico em Entrar
-   Entao o sistema continua na pagina de login
+  Cenario: Email e senha nao preenchidos
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email “"
+    E preenche a senha “”
+    E clica em entrar
+    Entao o sistema exibe a mensagem “Fill in email”
+
+  Cenario: Senha nao preenchida
+    Dado que estou na pagina de login
+    Quando o usuario preenche o campo do email “teste.gabriel@gmail.com"
+    E preenche a senha “”
+    E clica em entrar
+    Entao o sistema exibe a mensagem “Fill in password”
