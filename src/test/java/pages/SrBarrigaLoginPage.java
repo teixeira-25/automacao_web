@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 public class SrBarrigaLoginPage extends BasePages
 {
-    private String url = "https://id.churchofjesuschrist.org/oauth2/default/v1/authorize?response_type=code&client_id=0oa5b6krts7UNNkID357&redirect_uri=https%3A%2F%2Fwww.churchofjesuschrist.org%2Fservices%2Fplatform%2Fv4%2Flogin&scope=openid+profile&state=https%3A%2F%2Fwww.churchofjesuschrist.org%2Fmy-home%3Flang%3Dpor";
+    private String url = "https://seubarriga.wcaquino.me";
     private By campoEmail = By.id("email");
     private By campoSenha = By.id("senha");
     private By btnEntrar = By.cssSelector("form > button.btn.btn-primary");
@@ -17,6 +17,11 @@ public class SrBarrigaLoginPage extends BasePages
 
     public void preencherEmail(String email)
     {
+        try {
+            Thread.sleep(400);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         driver.findElement(campoEmail).sendKeys(email);
     }
 
