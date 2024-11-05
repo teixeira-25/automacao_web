@@ -2,17 +2,19 @@ package steps;
 
 import config.baseclass.BaseSteps;
 import io.cucumber.java.pt.Dada;
-import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import junit.framework.Assert;
 import pages.AlertasComponentePage;
-import pages.SrBarrigaLoginPage;
+import pages.FLuentzHomePage;
+import pages.FluentzLoginPage;
 
-public class LoginSrBarrigaSteps extends BaseSteps
+public class LoginFluentzSteps extends BaseSteps
 {
-    SrBarrigaLoginPage pageLogin = new SrBarrigaLoginPage();
+    FluentzLoginPage pageLogin = new FluentzLoginPage();
+    FLuentzHomePage pageHome = new FLuentzHomePage();
     AlertasComponentePage componenteAlert = new AlertasComponentePage();
+
 
     @Dada("que estou na pagina de login")
     public void que_estou_na_pagina_de_login()
@@ -72,6 +74,6 @@ public class LoginSrBarrigaSteps extends BaseSteps
     @Entao("o sistema da acesso a home")
     public void o_sistema_da_acesso_a_home()
         {
-            pageLogin.verSeEstaHome();
+            pageHome.verSeEstaHome();
         }
 }
