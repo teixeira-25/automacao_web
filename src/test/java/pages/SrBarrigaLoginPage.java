@@ -9,6 +9,7 @@ public class SrBarrigaLoginPage extends BasePages
     private By campoEmail = By.id("email");
     private By campoSenha = By.id("pass");
     private By btnEntrar = By.id("login");
+    private By btnHome = By.xpath("//*[@id=\"top_menu\"]/div/button");
 
     public void abrir()
     {
@@ -43,5 +44,15 @@ public class SrBarrigaLoginPage extends BasePages
     {
         driver.findElement(campoEmail);
         driver.findElement(campoSenha);
+    }
+
+    public void verSeEstaHome()
+    {
+        try {
+            Thread.sleep(900);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        driver.findElement(btnHome);
     }
 }

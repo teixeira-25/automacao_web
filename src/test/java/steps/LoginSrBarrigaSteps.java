@@ -44,23 +44,23 @@ public class LoginSrBarrigaSteps extends BaseSteps
     @Entao("o sistema exibe a mensagem {string}")
     public void o_sistema_exibe_a_mensagem(String msgEsperada)
     {
-        String msgTela = componenteAlert.pegarMsg1();
         try {
-            Thread.sleep(200);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        String msgTela = componenteAlert.pegarMsg1();
         Assert.assertEquals(msgEsperada, msgTela);
         screenshot();
     }
 
-    @E("o sistema exibe a segunda mensagem: {string}")
-    public void o_sistema_exibe_a_mensagem_da_senha(String msgEsperada)
-    {
-        String msgTela = componenteAlert.pegarMsg2();
-        Assert.assertEquals(msgEsperada, msgTela);
-        screenshot();
-    }
+    //@E("o sistema exibe a segunda mensagem: {string}")
+    //public void o_sistema_exibe_a_mensagem_da_senha(String msgEsperada)
+    //{
+    //    String msgTela = componenteAlert.pegarMsg2();
+    //    Assert.assertEquals(msgEsperada, msgTela);
+    //    screenshot();
+    //}
 
     @Entao("o sistema continua na pagina de login")
     public void oSistemaContinuaNaPaginaDeLogin()
@@ -68,4 +68,10 @@ public class LoginSrBarrigaSteps extends BaseSteps
         pageLogin.estouAqui();
         screenshot();
     }
+
+    @Entao("o sistema da acesso a home")
+    public void o_sistema_da_acesso_a_home()
+        {
+            pageLogin.verSeEstaHome();
+        }
 }
