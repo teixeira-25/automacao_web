@@ -19,6 +19,7 @@ public class LoginEoCoreSteps extends BaseSteps
         screenshot();
     }
 
+
     @E("o usuario preenche na barra de username {string}")
     public void o_usuario_preenche_na_barra_de_username(String username)
     {

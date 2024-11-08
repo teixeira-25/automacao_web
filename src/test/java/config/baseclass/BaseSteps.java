@@ -35,4 +35,9 @@ public class BaseSteps
             cce.printStackTrace();
         }
     }
+
+    public static void scroll()
+    {
+
+    }
 }
