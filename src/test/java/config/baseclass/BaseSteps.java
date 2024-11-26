@@ -2,9 +2,8 @@ package config.baseclass;
 
 import config.support.Navegador;
 import io.cucumber.java.Scenario;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -13,6 +12,8 @@ public class BaseSteps
 {
     public static WebDriver browser;
     public static Scenario scenario;
+    public static Actions actions;
+
 
     public static void abrirBrowser()
     {
@@ -36,8 +37,6 @@ public class BaseSteps
         }
     }
 
-    public static void scroll()
-    {
 
-    }
+
 }
