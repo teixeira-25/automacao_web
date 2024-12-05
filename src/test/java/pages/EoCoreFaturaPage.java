@@ -39,8 +39,9 @@ public class EoCoreFaturaPage extends BasePages
     {
         return driver.findElement(bookingCode).getText();
     }
+
     public String getcustomerDetails ()
     {
-        return driver.findElement(customerDetails).getText();
+        return driver.findElement(customerDetails).getText().replaceAll("\n", " ");
     }
 }
