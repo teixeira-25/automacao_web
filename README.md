@@ -1,6 +1,7 @@
 # automacao-web
 
-- Tarefinha do Tio Mick
-```
-Concertar cenarios comentados na feature do sr barriga.
+Repositorio com casca de automação Web con pag object e outros recursos utilizando também Selenium Web Driver, JUnit e Cucumber. Em casa Branch uma nova fature. 
+
+Site SrBarriga (Main)
+Site EoCore (Develop)
 ```
